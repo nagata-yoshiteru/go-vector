@@ -111,3 +111,11 @@ func Hadamard(v1, v2 Vector) (Vector, error) {
 	}
 	return result, nil
 }
+
+func Det(v1, v2 Vector) float64 {
+	return v1[0]*v2[1] - v1[1]*v2[0]
+}
+
+func LeftOf(v1, v2, v3 Vector) float64 {
+	return Det(Subtract(v1, v3), Subtract(v2, v1))
+}
